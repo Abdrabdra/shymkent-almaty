@@ -25,7 +25,7 @@ const ProfileStatistics = () => (
       <Typography
         sx={{ fontSize: "12px", fontWeight: 600, color: "secondary.900" }}
       >
-        Статистика продаж, просмотров, кликов и т.д.
+        Статистика объявлений, просмотров, кликов и т.д.
       </Typography>
     </Stack>
   </Stack>

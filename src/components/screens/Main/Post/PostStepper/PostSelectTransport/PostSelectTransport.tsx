@@ -43,7 +43,7 @@ const PostSelectTransport = () => {
           id="panel1bh-header"
         >
           <Typography sx={{ fontSize: "18px", fontWeight: 600 }}>
-            Машины
+            Перевозка Пассажиров
           </Typography>
         </AccordionSummary>
         <Divider variant="middle" />
@@ -62,7 +62,7 @@ const PostSelectTransport = () => {
           id="panel2bh-header"
         >
           <Typography sx={{ fontSize: "18px", fontWeight: 600 }}>
-            Запчасти
+            Транспортировка
           </Typography>
         </AccordionSummary>
         <Divider variant="middle" />

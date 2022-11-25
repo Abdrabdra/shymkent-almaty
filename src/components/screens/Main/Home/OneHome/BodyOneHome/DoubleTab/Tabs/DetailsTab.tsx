@@ -3,40 +3,28 @@ import { RootState, useTypedSelector } from "@store/index";
 
 const data = [
   {
-    title: "Город",
+    title: "Откуда",
     value: "Алматы",
   },
   {
-    title: "Поколение",
-    value: "2016-2020 W213/S213/C238/A23",
+    title: "Куда",
+    value: "Шымкент",
   },
   {
-    title: "Кузов",
-    value: "Купе",
+    title: "Цена",
+    value: "15 000 KZT",
   },
   {
-    title: "Обьем двигателя",
-    value: "3л",
+    title: "Выезд",
+    value: "19.11.2022, 20:00",
   },
   {
-    title: "Пробег",
-    value: "5 000км",
+    title: "Транспорт",
+    value: "Toyota Camry 70",
   },
   {
-    title: "Коробка передач",
-    value: "Автомат",
-  },
-  {
-    title: "Привод",
-    value: "Задний привод",
-  },
-  {
-    title: "Руль",
-    value: "Слева",
-  },
-  {
-    title: "Расмтожен в КЗ",
-    value: "Да",
+    title: "Колчество мест",
+    value: "3",
   },
 ];
 const len = data.length;
@@ -75,7 +63,7 @@ const DetailsTab = () => {
       }}
     >
       <Stack>
-        {(stateData ? stateData : data).map((row, index) => (
+        {data.map((row, index) => (
           <Stack spacing={1} sx={{ paddingTop: "0.5rem" }}>
             <Box sx={{ display: "flex" }} key={index}>
               <Typography

@@ -27,8 +27,8 @@ import { SelectFormProps } from "../PostSelectModification.types";
 import AbsoluteBox from "@components/modules/AbsoluteBox";
 
 enum Options {
-  Option1 = "Передний",
-  Option2 = "Задний",
+  Option1 = "200 литров",
+  Option2 = "300 литров",
 }
 const name = "selectedGear";
 

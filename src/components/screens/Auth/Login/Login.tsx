@@ -63,7 +63,7 @@ const Login: React.FC = () => {
         }}
       >
         <Typography variant="h6" align="center" sx={{ color: "common.white" }}>
-          Auto Like
+          Shymkent Almaty
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <img src={AuthBg} alt={"Auth Background"} />

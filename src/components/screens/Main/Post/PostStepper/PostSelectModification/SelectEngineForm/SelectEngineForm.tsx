@@ -14,8 +14,6 @@ import { Form, Formik, useFormik } from "formik";
 import { FC, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { RootState, useTypedSelector } from "@store/index";
-
 import {
   incrementStep,
   setFormSelectedEngine,
@@ -26,8 +24,8 @@ import { SelectFormProps } from "../PostSelectModification.types";
 import AbsoluteBox from "@components/modules/AbsoluteBox";
 
 enum Options {
-  Option1 = "Бензиновый",
-  Option2 = "Дизельный",
+  Option1 = "4",
+  Option2 = "6",
 }
 const name = "selectedEngine";
 

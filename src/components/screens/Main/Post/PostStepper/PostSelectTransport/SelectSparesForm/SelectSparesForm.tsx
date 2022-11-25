@@ -23,9 +23,8 @@ import { useDispatch } from "react-redux";
 import { SelectFormProps } from "../SelectedForm.types";
 
 enum Options {
-  Option1 = "Автомобиль",
-  Option2 = "Мотоциклы",
-  Option3 = "Водный транспорт",
+  Option1 = "Маленькие Грузы",
+  Option2 = "Большие Грузы",
 }
 
 const SelectSparesForm: FC<SelectFormProps> = ({ expanded }) => {

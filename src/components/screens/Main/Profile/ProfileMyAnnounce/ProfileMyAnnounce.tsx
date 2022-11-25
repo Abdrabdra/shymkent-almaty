@@ -5,12 +5,12 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 
 const data = [
   {
-    title: "Lexus LF LC 500",
+    title: "Шымкент - Алматы",
     views: 200,
     messages: 12,
   },
   {
-    title: "Lexus LF LC 500",
+    title: "Алматы - Шымкент",
     views: 200,
     messages: 12,
   },

@@ -4,8 +4,8 @@ import HandymanIcon from "@mui/icons-material/Handyman";
 import AddIcon from "@mui/icons-material/Add";
 
 const boxes = [
-  { title: "Автомобили", icon: DirectionsCarIcon },
-  { title: "Запчасти", icon: HandymanIcon },
+  { title: "Направления", icon: DirectionsCarIcon },
+  { title: "Поддержка", icon: HandymanIcon },
   { title: "Подать", icon: AddIcon },
 ];
 

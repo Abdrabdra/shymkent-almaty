@@ -4,27 +4,27 @@ import ChatRow from "./ChatRow";
 const data = [
   {
     id: 0,
-    car: "Lexus LF LC 500",
+    car: "Шымкент Алматы",
     name: "Акжол",
   },
   {
     id: 1,
-    car: "Lexus LF LC 500",
+    car: "Шымкент Алматы",
     name: "Акжол",
   },
   {
     id: 2,
-    car: "Lexus LF LC 500",
+    car: "Шымкент Алматы",
     name: "Акжол",
   },
   {
     id: 3,
-    car: "Lexus LF LC 500",
+    car: "Шымкент Алматы",
     name: "Акжол",
   },
   {
     id: 4,
-    car: "Lexus LF LC 500",
+    car: "Шымкент Алматы",
     name: "Акжол",
   },
 ];

@@ -8,52 +8,52 @@ const cars = [
   {
     id: 0,
     image: "",
-    title: "Lexus LF LC 500",
-    price: 20000000,
-    city: "Алматы",
-    publishDate: "7 октября",
+    title: "Алматы - Шымкент",
+    price: 15000,
+    city: "Выезд 19 нояб. 20:00",
+    publishDate: "19 ноябрь",
     views: 1280,
-    tags: { releaseDate: "2017", condition: "С пробегом", mileage: "5000" },
+    tags: { releaseDate: "Алматы", condition: "Шымкент", mileage: "6 часов" },
   },
   {
     id: 1,
     image: "",
-    title: "Lexus LF LC 500",
-    price: 20000000,
-    city: "Алматы",
-    publishDate: "7 октября",
+    title: "Алматы - Тараз",
+    price: 12000,
+    city: "Выезд 19 нояб. 20:00",
+    publishDate: "19 ноябрь",
     views: 1280,
-    tags: { releaseDate: "2017", condition: "С пробегом", mileage: "5000" },
+    tags: { releaseDate: "Алматы", condition: "Тараз", mileage: "6 часов" },
   },
   {
     id: 2,
     image: "",
-    title: "Lexus LF LC 500",
-    price: 20000000,
-    city: "Алматы",
-    publishDate: "7 октября",
+    title: "Алматы - Кордай",
+    price: 10000,
+    city: "Выезд 19 нояб. 20:00",
+    publishDate: "19 ноябрь",
     views: 1280,
-    tags: { releaseDate: "2017", condition: "С пробегом", mileage: "5000" },
+    tags: { releaseDate: "Алматы", condition: "Кордай", mileage: "6 часов" },
   },
   {
     id: 3,
     image: "",
-    title: "Lexus LF LC 500",
-    price: 20000000,
-    city: "Алматы",
-    publishDate: "7 октября",
+    title: "Алматы - Бишкек",
+    price: 20000,
+    city: "Выезд 19 нояб. 20:00",
+    publishDate: "19 ноябрь",
     views: 1280,
-    tags: { releaseDate: "2017", condition: "С пробегом", mileage: "5000" },
+    tags: { releaseDate: "Алматы", condition: "Бишкек", mileage: "6 часов" },
   },
   {
     id: 4,
     image: "",
-    title: "Lexus LF LC 500",
-    price: 20000000,
-    city: "Алматы",
-    publishDate: "7 октября",
+    title: "Алматы - Чунджа",
+    price: 14000,
+    city: "Выезд 19 нояб. 20:00",
+    publishDate: "19 ноябрь",
     views: 1280,
-    tags: { releaseDate: "2017", condition: "С пробегом", mileage: "5000" },
+    tags: { releaseDate: "Алматы", condition: "Чунджа", mileage: "6 часов" },
   },
 ];
 
@@ -67,7 +67,7 @@ const Content = () => {
   return (
     <Box>
       <Typography variant="h4" my={1}>
-        Объявления
+        Популярные Направления
       </Typography>
       <Stack spacing={1.5}>
         {cars.map((car, index) => (

@@ -1,18 +1,25 @@
-import { Box, Button, Icon, Input, Stack } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  Icon,
+  Input,
+  InputLabel,
+  makeStyles,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Stack,
+  TextField,
+} from "@mui/material";
 import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
 import { useNavigate } from "react-router-dom";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { Dayjs } from "dayjs";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 import * as React from "react";
-import Dialog from "@mui/material/Dialog";
-import ListItemText from "@mui/material/ListItemText";
-import ListItem from "@mui/material/ListItem";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import PostSelectModification from "@components/screens/Main/Post/PostStepper/PostSelectModification";
@@ -33,60 +40,160 @@ const TopHomeDrawer = () => {
     navigate("/app/home/filter");
   };
 
-  const [open, setOpen] = React.useState(false);
+  const [departure, setDeparture] = React.useState("");
+  const [arrive, setArrive] = React.useState("");
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleDChange = (event: SelectChangeEvent) => {
+    setDeparture(event.target.value as string);
+  };
+  const handleAChange = (event: SelectChangeEvent) => {
+    setArrive(event.target.value as string);
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [value, setValue] = React.useState<Dayjs | null>(null);
 
   return (
-    <>
-      <Input placeholder="Поиск" disableUnderline sx={{ flex: 1 }} />
+    <Stack
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      spacing={2}
+      sx={{ flex: "1" }}
+    >
+      <Box sx={{ flex: "0.3" }}>
+        <FormControl fullWidth>
+          <InputLabel
+            id="demo-simple-select-label"
+            sx={{ color: "common.white" }}
+          >
+            Откуда
+          </InputLabel>
+          <Select
+            variant={"outlined"}
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={departure}
+            label="Откуда"
+            displayEmpty
+            onChange={handleDChange}
+            sx={{
+              borderRadius: "15px",
+              color: "white",
+              ".MuiOutlinedInput-notchedOutline": {
+                borderColor: "common.white",
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "rgba(228, 219, 233, 0.25)",
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "common.white",
+              },
+              ".MuiSvgIcon-root ": {
+                fill: "white !important",
+              },
+            }}
+          >
+            <MenuItem value={"Алматы"}>Алматы</MenuItem>
+            <MenuItem value={"Шымкент"}>Шымкент</MenuItem>
+            <MenuItem value={"Астана"}>Астана</MenuItem>
+            <MenuItem value={"Тараз"}>Тараз</MenuItem>
+            <MenuItem value={"Талгар"}>Талгар</MenuItem>
+            <MenuItem value={"Бишкек"}>Бишкек</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+      <Box sx={{ flex: "0.3" }}>
+        <FormControl fullWidth>
+          <InputLabel
+            id="demo-simple-select-label"
+            sx={{ color: "common.white" }}
+          >
+            Куда
+          </InputLabel>
+          <Select
+            variant={"outlined"}
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={arrive}
+            label="Куда"
+            displayEmpty
+            onChange={handleAChange}
+            sx={{
+              borderRadius: "15px",
+              color: "white",
+              ".MuiOutlinedInput-notchedOutline": {
+                borderColor: "common.white",
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "rgba(228, 219, 233, 0.25)",
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "common.white",
+              },
+              ".MuiSvgIcon-root ": {
+                fill: "white !important",
+              },
+            }}
+          >
+            <MenuItem value={"Алматы"}>Алматы</MenuItem>
+            <MenuItem value={"Шымкент"}>Шымкент</MenuItem>
+            <MenuItem value={"Астана"}>Астана</MenuItem>
+            <MenuItem value={"Тараз"}>Тараз</MenuItem>
+            <MenuItem value={"Талгар"}>Талгар</MenuItem>
+            <MenuItem value={"Бишкек"}>Бишкек</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+      <Box sx={{}}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DatePicker
+            label="Сегодня"
+            value={value}
+            onChange={(newValue) => {
+              setValue(newValue);
+            }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                sx={{
+                  input: {
+                    color: "common.white",
+                    "&::placeholder": {
+                      textOverflow: "ellipsis !important",
+                      color: "common.white",
+                    },
+                  },
+                  color: "common.white",
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "15px",
+                    "& fieldset": {
+                      borderColor: "common.white",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "common.white",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "common.white",
+                    },
+                  },
+                }}
+              />
+            )}
+          />
+        </LocalizationProvider>
+      </Box>
       <Button
         variant="contained"
-        onClick={handleClickOpen}
         sx={{
-          minWidth: "50px",
-          width: "50px",
+          borderRadius: "15px",
           height: "50px",
-          borderRadius: "12px",
+          width: "120px",
+          fontSize: "16px",
         }}
       >
-        <Icon component={TuneOutlinedIcon} />
+        Поиск
       </Button>
-      <Dialog
-        fullScreen
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Transition}
-      >
-        <AppBar sx={{ position: "relative" }}>
-          <Toolbar>
-            <IconButton
-              edge="start"
-              color="inherit"
-              onClick={handleClose}
-              aria-label="close"
-            >
-              <CloseIcon />
-            </IconButton>
-            <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              Фильтры
-            </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              Сбросить
-            </Button>
-          </Toolbar>
-        </AppBar>
-        <Stack>
-          <PostSelectModification forFilter={true} />
-        </Stack>
-      </Dialog>
-    </>
+    </Stack>
   );
 };
 

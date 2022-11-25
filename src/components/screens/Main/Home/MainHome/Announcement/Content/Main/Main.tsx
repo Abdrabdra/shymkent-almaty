@@ -37,7 +37,7 @@ const Main: FC<Props> = ({ title, price, city, tags }) => {
           <Stack>
             <Typography variant="h6">{title}</Typography>
             <Typography variant="h6" color="primary">
-              {numberWithSpaces(price)}KZT
+              от {numberWithSpaces(price)} KZT
             </Typography>
             <Typography variant="h6">{city}</Typography>
           </Stack>

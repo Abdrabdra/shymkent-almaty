@@ -11,18 +11,18 @@ import bannerImg from "../../../../../../_mockup/banner/banner1.png";
 
 const banners = [
   {
-    title: "Avto Like запустился",
-    text: "Покупайте автомобили через наше приложение Avto-Like.kz",
+    title: "Shymkent Almaty запустился",
+    text: "Заказывайте такси через наше приложение Shymkent Almaty",
     img: bannerImg,
   },
   {
-    title: "Buy Jer запустился",
-    text: "Покупайте недвижимость через наше приложение BuyJer.kz",
+    title: "Shymkent Almaty запустился",
+    text: "Заказывайте такси через наше приложение Shymkent Almaty",
     img: bannerImg,
   },
   {
-    title: "MarketPlace запустился",
-    text: "Покупайте все что угодно через наше приложение MarketPlace.kz",
+    title: "Shymkent Almaty запустился",
+    text: "Заказывайте такси через наше приложение Shymkent Almaty",
     img: bannerImg,
   },
 ];

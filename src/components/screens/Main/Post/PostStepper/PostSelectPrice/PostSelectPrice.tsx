@@ -55,7 +55,7 @@ const PostSelectPrice = () => {
               padding: "14px 15px 14px 20px",
             }}
           >
-            <Typography>Цена</Typography>
+            <Typography>Цена Обявлений</Typography>
             <OutlinedInput
               name={"selectedPrice"}
               value={values.selectedPrice}

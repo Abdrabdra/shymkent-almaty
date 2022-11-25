@@ -6,7 +6,7 @@ import { RootState, useTypedSelector } from "@store/index";
 
 const banners = [
   {
-    title: "Avto Like запустился",
+    title: "Shymkent Almaty запустился",
     text: "Покупайте автомобили через наше приложение Avto-Like.kz",
   },
   {

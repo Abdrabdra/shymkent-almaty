@@ -48,12 +48,12 @@ const PostSelectModification: React.FC<Props> = ({ forFilter }) => {
               gap: "5px",
             }}
           >
-            Двигатель -{" "}
+            Количество -{" "}
             <Typography
               variant={"caption"}
               sx={{ color: "grey.100", fontSize: "18px" }}
             >
-              Бензиновый
+              Мест
             </Typography>
           </Typography>
         </AccordionSummary>
@@ -73,7 +73,7 @@ const PostSelectModification: React.FC<Props> = ({ forFilter }) => {
           id="panel2bh-header"
         >
           <Typography sx={{ fontSize: "18px", fontWeight: 600 }}>
-            Привод
+            Вместимость Багажника
           </Typography>
         </AccordionSummary>
         <Divider variant="middle" />
@@ -92,7 +92,7 @@ const PostSelectModification: React.FC<Props> = ({ forFilter }) => {
           id="panel2bh-header"
         >
           <Typography sx={{ fontSize: "18px", fontWeight: 600 }}>
-            Коробка передач
+            Расход Топлива
           </Typography>
         </AccordionSummary>
         <Divider variant="middle" />

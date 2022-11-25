@@ -60,7 +60,7 @@ const SelectTransportForm: FC<SelectFormProps> = ({ expanded }) => {
               <FormControlLabel
                 value={"Автомобиль"}
                 control={<Radio required />}
-                label={"Автомобиль"}
+                label={"Межгород"}
                 labelPlacement="start"
                 sx={{ display: "flex", justifyContent: "space-between" }}
               />
@@ -68,18 +68,11 @@ const SelectTransportForm: FC<SelectFormProps> = ({ expanded }) => {
               <FormControlLabel
                 value={"Мотоциклы"}
                 control={<Radio required />}
-                label={"Мотоциклы"}
+                label={"Внутри Города"}
                 labelPlacement="start"
                 sx={{ display: "flex", justifyContent: "space-between" }}
               />
               <Divider sx={{ width: "250px", marginLeft: "16px" }} />
-              <FormControlLabel
-                value={"Водный транспорт"}
-                control={<Radio required />}
-                label={"Водный транспорт"}
-                labelPlacement="start"
-                sx={{ display: "flex", justifyContent: "space-between" }}
-              />
             </RadioGroup>
           </FormControl>
           <Box sx={{ display: expanded === "panel1" ? "initial" : "none" }}>

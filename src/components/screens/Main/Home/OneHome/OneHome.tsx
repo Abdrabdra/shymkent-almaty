@@ -19,10 +19,10 @@ const OneHome = () => {
         <Stack spacing={1}>
           <ImageBox />
           <TagBox />
-          <TitleBox title="Toyota Alphard" price={15000} />
+          <TitleBox title="Шымкент - Алматы" price={15000} />
           <DoubleTab />
           <Description />
-          <InfoStats views={770} publishDate={"7 октября"} />
+          <InfoStats views={770} publishDate={"19 ноябрь"} />
         </Stack>
       </Container>
     </Box>

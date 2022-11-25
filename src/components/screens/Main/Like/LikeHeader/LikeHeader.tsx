@@ -9,10 +9,10 @@ const LikeHeader = () => {
       <Stack direction="row" justifyContent="space-between">
         <Stack direction="row" spacing={1.5} alignItems="center">
           <PersonIcon />
-          <Typography>Lexus LF LC 500</Typography>
+          <Typography>Шымкент Алматы</Typography>
         </Stack>
         <Button>
-          Купить <ArrowForwardIosIcon />
+          Перейти <ArrowForwardIosIcon />
         </Button>
       </Stack>
     </Container>

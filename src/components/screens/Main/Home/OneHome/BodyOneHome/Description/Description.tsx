@@ -10,7 +10,7 @@ const Description = () => {
         padding: "16px",
       }}
     >
-      Описание Продавца
+      Описание
     </Box>
   );
 };

@@ -52,7 +52,7 @@ const Registration: React.FC = () => {
   return (
     <Container>
       <Stack sx={{ padding: "20px" }}>
-        <Typography align="center">Регистрация в taxtaxi.KZ</Typography>
+        <Typography align="center">Регистрация в Shymkent Almaty</Typography>
         <form onSubmit={handleSubmit}>
           <>
             <Stack>

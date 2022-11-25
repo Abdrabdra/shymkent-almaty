@@ -31,7 +31,7 @@ const ProfileInfo = () => {
       </Stack>
       <Stack direction="row" spacing={0.8}>
         <Typography sx={{ color: "secondary.900", fontWeight: 600 }}>
-          C Avto-Like с{" "}
+          C ShymkentAlmaty с{" "}
         </Typography>
         <Typography sx={{ fontWeight: 600 }}>2022г. 24 ноября</Typography>
       </Stack>
@@ -52,7 +52,7 @@ const ProfileInfo = () => {
             <IconButton color="primary" sx={{ padding: 0 }}>
               <ImageIcon />
             </IconButton>
-            <Typography sx={{ fontWeight: 600 }}>16 постов</Typography>
+            <Typography sx={{ fontWeight: 600 }}>16 поездок</Typography>
           </Stack>
           <Stack
             direction="row"
