@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import { RootState, useTypedSelector } from "@store/index";
+import axios, { $imageApi } from "api/axios";
 
 const banners = [
   {
@@ -19,7 +20,7 @@ const banners = [
   },
 ];
 
-const ImageBox = () => {
+const ImageBox = ({ picture }: any) => {
   const image = useTypedSelector(
     (state: RootState) => state.stepper.form.selectedPicture
   );
@@ -29,17 +30,19 @@ const ImageBox = () => {
       <Swiper spaceBetween={50} slidesPerView={1} loop={true}>
         {banners.map((banner, index) => (
           <SwiperSlide key={index}>
-            {image ? (
-              <Box
-                component="img"
-                src={image}
-                sx={{
-                  width: "100%",
-                  height: "200px",
-                  borderRadius: "20px",
-                  backgroundColor: "secondary.200",
-                }}
-              />
+            {!image ? (
+              <>
+                <Box
+                  component="img"
+                  src={`${$imageApi}/${picture}`}
+                  sx={{
+                    width: "100%",
+                    height: "200px",
+                    borderRadius: "20px",
+                    backgroundColor: "secondary.200",
+                  }}
+                />
+              </>
             ) : (
               <Box
                 sx={{

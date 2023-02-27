@@ -1,4 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { $imageApi } from "api/axios";
 import { FC } from "react";
 
 import numberWithSpaces from "../../../../../../../../utils/numberWithSpaces";
@@ -11,12 +12,15 @@ interface Props {
   price: number;
   city: string;
   tags: any;
+  picture: any;
 }
 
-const Main: FC<Props> = ({ title, price, city, tags }) => {
+const Main: FC<Props> = ({ title, price, city, tags, picture }) => {
   return (
     <Stack direction="row" spacing={1} sx={{ padding: "4px 8px 8px 4px" }}>
       <Box
+        component="img"
+        src={`${$imageApi}/${picture}`}
         sx={{
           backgroundColor: "secondary.200",
           borderRadius: "10px",

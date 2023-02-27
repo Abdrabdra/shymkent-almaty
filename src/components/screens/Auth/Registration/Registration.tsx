@@ -17,6 +17,7 @@ import { useTypedSelector } from "../../../../store";
 import { StyledNewInput } from "../../../ui/Input";
 import { ActionsEnum } from "../../../../store/enum";
 import { loginSchema } from "../../../../utils/schema/validation";
+import axios from "api/axios";
 
 const Registration: React.FC = () => {
   const navigate = useNavigate();
@@ -30,18 +31,24 @@ const Registration: React.FC = () => {
 
   const formik = useFormik({
     initialValues: {
-      phone: "",
+      username: "",
       password: "",
     },
     onSubmit: async (values) => {
       // @ts-ignore
-      dispatch(login(values as ILogin));
+      // dispatch(login(values as ILogin));
+      try {
+        const result = await axios.post("/auth/registration", values);
+        handleClick();
+      } catch (e) {
+        alert("Ошибка");
+      }
     },
     validationSchema: loginSchema,
   });
 
   const { values, errors, handleChange, handleSubmit } = formik;
-  const { phone, password } = values;
+  const { username, password } = values;
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -59,13 +66,13 @@ const Registration: React.FC = () => {
               <Typography>Номер телефона</Typography>
               <StyledNewInput
                 ref={inputRef}
-                name="phone"
-                value={phone}
+                name="username"
+                value={username}
                 required
                 onChange={handleChange}
                 placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _"
               />
-              {errors.phone && <Typography>{errors.phone}</Typography>}
+              {errors.username && <Typography>{errors.username}</Typography>}
             </Stack>
             <Stack>
               <Typography>Пароль</Typography>

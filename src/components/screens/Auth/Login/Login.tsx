@@ -21,6 +21,8 @@ import { loginSchema } from "../../../../utils/schema/validation";
 import { StyledNewInput } from "../../../ui/Input";
 import { ActionsEnum } from "../../../../store/enum";
 import { login } from "../../../../store/reducers/auth/auth.action";
+import axios from "api/axios";
+import { setLogin } from "@store/reducers/auth/auth.slice";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -34,18 +36,24 @@ const Login: React.FC = () => {
 
   const formik = useFormik({
     initialValues: {
-      phone: "", // 8747 411 81 59
+      username: "", // 8747 411 81 59
       password: "", // 12345
     },
     onSubmit: async (values) => {
       // @ts-ignore
-      dispatch(login(values as ILogin));
+      // dispatch(login(values as ILogin));
+      try {
+        const result = await axios.post("/auth/login", values);
+        dispatch(setLogin());
+      } catch (e) {
+        alert("Ошибка");
+      }
     },
     validationSchema: loginSchema,
   });
 
   const { values, errors, handleChange, handleSubmit } = formik;
-  const { phone, password } = values;
+  const { username, password } = values;
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -77,16 +85,16 @@ const Login: React.FC = () => {
 
         <form onSubmit={handleSubmit}>
           <Stack>
-            <Typography>Номер телефона</Typography>
+            <Typography>Username</Typography>
             <StyledNewInput
               ref={inputRef}
-              name="phone"
-              value={phone}
+              name="username"
+              value={username}
               required
               onChange={handleChange}
               placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _"
             />
-            {errors.phone && <Typography>{errors.phone}</Typography>}
+            {errors.username && <Typography>{errors.username}</Typography>}
           </Stack>
           <Stack>
             <Typography>Пароль</Typography>

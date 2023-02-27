@@ -21,6 +21,9 @@ const authReducer = createSlice({
       //debugger
       state.status = payload;
     },
+    setLogin: (state) => {
+      state.isAuth = true;
+    },
   },
   initialState,
   extraReducers: (builder) => {
@@ -55,6 +58,6 @@ const authReducer = createSlice({
   },
 });
 
-export const { setStatus } = authReducer.actions;
+export const { setStatus, setLogin } = authReducer.actions;
 
 export default authReducer.reducer;

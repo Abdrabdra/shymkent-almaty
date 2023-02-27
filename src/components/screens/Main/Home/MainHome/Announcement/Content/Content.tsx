@@ -1,5 +1,7 @@
 import InfoStats from "@components/modules/InfoStat/InfoStat";
 import { Box, Stack, Typography } from "@mui/material";
+import axios from "api/axios";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Main from "./Main/Main";
@@ -64,16 +66,35 @@ const Content = () => {
     navigate(`/app/home/one/${id}`);
   };
 
+  const [products, setProducts] = React.useState([
+    {
+      _id: 1,
+      title: "фыв",
+      to: "фывфыв",
+      from: "asdas",
+      price: 1111,
+      picture: "asdasd",
+    },
+  ]);
+  useEffect(() => {
+    hotelLoad();
+  }, []);
+
+  const hotelLoad = async () => {
+    const result = await axios.get(`/hotel/get-hotels`);
+    setProducts(result.data);
+  };
+
   return (
     <Box>
       <Typography variant="h4" my={1}>
         Популярные Направления
       </Typography>
       <Stack spacing={1.5}>
-        {cars.map((car, index) => (
+        {products.map((car, index) => (
           <Box
             key={index}
-            onClick={() => handleNavigate(car.id)}
+            onClick={() => handleNavigate(car._id)}
             sx={{
               height: "146px",
               backgroundColor: "common.white",
@@ -82,11 +103,12 @@ const Content = () => {
           >
             <Main
               title={car.title}
-              city={car.city}
+              city={car.to}
               price={car.price}
-              tags={car.tags}
+              tags={car.to.concat(car.from)}
+              picture={car.picture}
             />
-            <InfoStats views={car.views} publishDate={car.publishDate} />
+            <InfoStats views={180} publishDate={"26 ноября"} />
           </Box>
         ))}
       </Stack>

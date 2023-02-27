@@ -10,8 +10,6 @@ const ErrorPage = () => {
   return (
     <>
       <div>Error page.</div>
-      <div>Тут попадаются только отбитые)</div>
-      <div>Можете себя поздравить</div>
       <button onClick={() => handleClick()}>Вернуться назад</button>
     </>
   );
